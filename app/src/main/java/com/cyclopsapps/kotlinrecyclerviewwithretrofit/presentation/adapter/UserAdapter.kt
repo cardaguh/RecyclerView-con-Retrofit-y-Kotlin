@@ -1,4 +1,4 @@
-package com.cyclopsapps.kotlinrecyclerviewwithretrofit.adapter
+package com.cyclopsapps.kotlinrecyclerviewwithretrofit.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cyclopsapps.kotlinrecyclerviewwithretrofit.R
-import com.cyclopsapps.kotlinrecyclerviewwithretrofit.model.User
+import com.cyclopsapps.kotlinrecyclerviewwithretrofit.data.model.User
 import kotlinx.android.synthetic.main.user_row.view.*
 
 class UserAdapter(private val users: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {

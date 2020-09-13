@@ -1,4 +1,4 @@
-package com.cyclopsapps.kotlinrecyclerviewwithretrofit.model
+package com.cyclopsapps.kotlinrecyclerviewwithretrofit.data.model
 
 data class User (
     val firstName: String,
