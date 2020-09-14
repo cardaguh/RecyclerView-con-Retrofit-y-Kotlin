@@ -23,7 +23,7 @@ class UserAdapter(private val users: List<User>) : RecyclerView.Adapter<UserAdap
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val user = users[position]
         holder.firstName.text = user.name
-        holder.lastName.text = user.userName
+        holder.lastName.text = user.phone
     }
 
 

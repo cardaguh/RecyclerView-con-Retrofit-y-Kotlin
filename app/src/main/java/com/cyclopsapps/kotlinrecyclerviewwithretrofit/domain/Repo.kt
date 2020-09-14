@@ -8,4 +8,6 @@ import com.cyclopsapps.kotlinrecyclerviewwithretrofit.data.model.User
  */
 interface Repo {
     suspend fun getUsers() : Resource<List<User>>
+
+    suspend fun getUsersFromDatabase() : Resource<List<User>>
 }

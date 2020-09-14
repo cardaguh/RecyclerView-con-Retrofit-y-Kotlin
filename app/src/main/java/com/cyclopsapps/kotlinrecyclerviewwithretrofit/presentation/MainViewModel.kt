@@ -16,6 +16,7 @@ class MainViewModel(private val repo: Repo) : ViewModel() {
     fun fetchUsers() = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
         try {
+            emit(repo.getUsersFromDatabase())
             emit(repo.getUsers())
         } catch (e: Exception) {
             emit(Resource.Failure(e))

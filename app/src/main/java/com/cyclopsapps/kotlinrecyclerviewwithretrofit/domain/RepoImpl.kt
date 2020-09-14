@@ -10,4 +10,5 @@ import com.cyclopsapps.kotlinrecyclerviewwithretrofit.data.model.User
 class RepoImpl(private val dataSource: DataSource) : Repo {
 
     override suspend fun getUsers(): Resource<List<User>> = dataSource.getUsers()
+    override suspend fun getUsersFromDatabase(): Resource<List<User>> = dataSource.getUsersFromDatabase()
 }
