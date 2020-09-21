@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cyclopsapps.kotlinrecyclerviewwithretrofit.R
+import com.cyclopsapps.kotlinrecyclerviewwithretrofit.core.CoroutineContextProvider
 import com.cyclopsapps.kotlinrecyclerviewwithretrofit.core.Resource
 import com.cyclopsapps.kotlinrecyclerviewwithretrofit.data.DataSource
 import com.cyclopsapps.kotlinrecyclerviewwithretrofit.data.api.RetrofitService
@@ -26,7 +27,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     // activityViewModels para compartir con otros fragments
     private val viewModel by viewModels<MainViewModel> {
-        MainViewModelFactory(RepoImpl(DataSource(RetrofitService.createService, AppDatabase.getDatabase(requireActivity().applicationContext).userDao())))
+        MainViewModelFactory(
+            RepoImpl(
+                DataSource(
+                    RetrofitService.createService,
+                    AppDatabase.getDatabase(requireActivity().applicationContext).userDao()
+                )
+            ),
+            CoroutineContextProvider()
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
